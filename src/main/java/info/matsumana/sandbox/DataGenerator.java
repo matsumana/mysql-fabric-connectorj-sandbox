@@ -34,7 +34,7 @@ public class DataGenerator {
                 HOST, PORT, DATABASE, SHARD_TABLE);
 
         try (FabricMySQLConnection conn = (FabricMySQLConnection) DriverManager.getConnection(url, USER, PASSWORD);
-             PreparedStatement ps = conn.prepareStatement("INSERT INTO test.table0 VALUES(?, ?)")) {
+             PreparedStatement ps = conn.prepareStatement("INSERT INTO table0 VALUES(?, ?)")) {
 
             IntStream.rangeClosed(1, 20)
                     .forEach(i -> {

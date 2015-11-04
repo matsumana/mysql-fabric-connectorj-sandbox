@@ -34,7 +34,7 @@ public class DataSelector {
                 HOST, PORT, DATABASE, SHARD_TABLE);
 
         try (FabricMySQLConnection conn = (FabricMySQLConnection) DriverManager.getConnection(url, USER, PASSWORD);
-             PreparedStatement ps = conn.prepareStatement("SELECT * FROM test.table0 ORDER BY id")) {
+             PreparedStatement ps = conn.prepareStatement("SELECT * FROM table0 ORDER BY id")) {
 
             ResultSet result = ps.executeQuery();
             while (result.next()) {
