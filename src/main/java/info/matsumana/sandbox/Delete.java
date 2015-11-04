@@ -24,6 +24,7 @@ public class Delete extends DatabaseAccess {
                     .forEach(i -> {
                         try {
                             // shard key
+                            // shard keyを指定してるので、該当シャードのグループにだけSQLが実行される
                             conn.setShardKey(String.valueOf(i));
 
                             ps.setInt(1, i);

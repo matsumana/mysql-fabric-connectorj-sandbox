@@ -21,6 +21,7 @@ public class Select extends DatabaseAccess {
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             // shard key
+            // shard keyを指定してるので、該当シャードのグループにだけSQLが実行される
             int shardKey = 10;
             conn.setShardKey(String.valueOf(shardKey));
 

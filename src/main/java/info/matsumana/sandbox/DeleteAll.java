@@ -14,6 +14,7 @@ public class DeleteAll extends DatabaseAccess {
 
     public static void main(String... args) {
 
+        // shard keyを指定してないので、グローバルグループのmasterノードにだけSQLが実行され、その他のノードにはレプリケーションで伝播する
         String sql = "DELETE FROM table0";
 
         try (FabricMySQLConnection conn = getConnection();
